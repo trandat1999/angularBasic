@@ -1,0 +1,65 @@
+<app-header></app-header>
+<app-footer></app-footer>
+<home *ngIf="!temp"></home>
+<ng-template [ngIf]="!temp">
+    <app-login></app-login>
+    <app-logout></app-logout>
+    <app-signup></app-signup>
+</ng-template>
+
+<button (click)="myname()">my name</button>
+
+<h1>if else</h1>
+<h3 *ngIf="temp else tempFasle">
+    temp = true
+</h3>
+<ng-template #tempFasle>
+    <h1>temp=fasle</h1>
+</ng-template>
+<h1>switch case</h1>
+<div [ngSwitch]="number">
+    <h3 *ngSwitchCase="1">
+        case 1
+    </h3>
+    <h3 *ngSwitchCase="2">
+        case 2
+    </h3>
+    <h3 *ngSwitchCase="3">
+        case 3
+    </h3>
+    <h3 *ngSwitchCase="4">
+        case 4
+    </h3>
+    <h3 *ngSwitchDefault>
+        default
+    </h3>
+</div>
+<div>
+    <h1>for loop</h1>
+    <h4 *ngFor="let item of data">
+        {{item}}
+    </h4>
+    <table border="2">
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+        </tr>
+        <tr *ngFor="let item of dataObject">
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+        </tr>
+    </table>
+    <h1>pipe in angular</h1>
+    <p>{{pipe | titlecase}}</p>
+    <p>{{pipe | lowercase}}</p>
+    <p>{{pipe | uppercase}}</p>
+    <h4>{{today | date: 'yyyy/MM/dd :: hh/mm/ss'}}</h4>
+    <h4>{{today1 | date: 'yyyy/MM/dd'}}</h4>
+    <h4>{{moneyVND | currency: 'VND'}}</h4>
+    <h4>{{moneyUSD | currency: 'USD'}}</h4>
+    <h4 *ngFor="let number of percent">
+        {{number | percent:'2.2'}}
+    </h4>
+</div>
+
+<app-my-table></app-my-table>

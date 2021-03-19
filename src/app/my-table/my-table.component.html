@@ -1,0 +1,16 @@
+<h1>get data</h1>
+<button (click)="updateData()"> post</button>
+<table border="2">
+    <tr>
+        <td>userId</td>
+        <td>id</td>
+        <td>title</td>
+        <td>body</td>
+    </tr>
+    <tr *ngFor="let user of data">
+        <td>{{user.userId}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.title}}</td>
+        <td>{{user.body}}</td>
+    </tr>
+</table>

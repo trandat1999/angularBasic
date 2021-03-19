@@ -1,0 +1,9 @@
+<p>home page</p>
+<form #form="ngForm" (ngSubmit)="getValueForm(form.value)"> 
+    <input ngModel name="username" placeholder="username" type="text">
+    <input ngModel name="password" placeholder="pass" type="password">
+    <button>get username and pass word</button>
+</form>
+
+<button (click)="showDate()"> show time now </button>
+<h2 *ngIf="date!=null">{{date| date: "fullDate"}}</h2>
